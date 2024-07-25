@@ -2344,9 +2344,9 @@ components:
             $ref: "#/components/schemas/SearchResult"
     SearchParameters:
       type: object
-      required:
-        - q
-        - query_by
+      # required:
+      #   - q
+      #   - query_by
 
       properties:
         q:
@@ -3006,6 +3006,20 @@ components:
           description: >
             Comma separated string of nested facet fields whose parent object should be returned in facet response.
           type: string
+
+        conversation:
+          description: >
+            Enable conversational search.
+          type: boolean
+        conversation_model_id:
+          description: >
+             The auto-generated Conversation Model ID returned by Typesense when creating a conversation model.
+          type: string
+        conversation_id:
+          description: >
+            The Id of a previous conversation to continue, this tells Typesense to include prior context when communicating with the LLM.
+          type: string
+
     MultiSearchSearchesParameter:
       type: object
       required:
